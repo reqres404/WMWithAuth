@@ -1,38 +1,243 @@
-.App {
+.popular-movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+ 
+}
+hr.roundedDiv {
+  border-top: 2px solid #21325e ;
+  border-radius: 5px;
+  width: 20%;
+}
+h1{
+  font-family: 'Redressed', cursive; color:#ffffff;
+  padding: 0%;
+  margin: 0;
   text-align: center;
+  font-size: 50px;
+}
+p{
+  font-family: 'Jost', sans-serif;color: rgb(255, 255, 255);
+  font-size: 21px;
+  margin-top: 2px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: 600;
+}
+p.rating{
+  font-size: 16px;
+}
+p.overviewText{
+  font-size: 18px;
+}
+img{
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.479);
+  width:100% ;
+  height:30vh;
+  object-fit: cover;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  transition-duration: 1s;
+}
+img:hover{
+  
+  transform: scale(1.1);
+}
+h2{
+  text-align: center;
+  font-size:28px;
+  color: white;
+  font-family: 'Amatic SC', cursive;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.filter-container button{
+  margin-right: 2rem;
+  
+  margin-bottom: 1rem;
+  min-width: 5rem;
+  padding: 0.5rem  1rem;
+  border: none;
+  background: white;
+  color: rgb(65,98,168);
+  border-radius: 1rem;
+  border: 4px solid #F1D00A;
+  font-weight: bold;
+  cursor: pointer;
+}
+button.active{
+  background: #F1D00A;
+  color: white;
+  
+}
+.overViewButtons{
+  background-color: #F1D00A; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border: 2px white;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 5px;
+}
+.overview {
+  background-color: white; 
+  color: black; 
+  border: 4px solid #F1D00A;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.overview:hover {
+  background-color: #21325E;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.overview.active{
+  background: rgb(65,98,168);
+  color: white;
+  
+}
+.zoom {
+  padding: 50px;
+  background-color: green;
+  transition: transform .2s; /* Animation */
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.zoom:hover {
+  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+footer{
+  color: white;
+  border: 2px solid #F1D00A;
+  background-color: #21325ed2;
+  padding: 1px;
+  text-align: center;
+  border-radius: 5px;
+  
+}
+.footerText{
+  color: white;
+}
+.footer-link-text{
+  color: white;
+  
+}
+.center-lottie{
+  display: flex;
+  margin-top: 0px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width:800px){
+  .filter-container button{
+    padding: 5px 10px;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+  .popular-movies {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 0.5rem;
   }
+  p.rating{
+    font-size: 12px;
+  }
+  p.overviewText{
+    font-size: 18px;
+  }
+
+  img{
+  
+    width:100% ;
+    height:20vh;
+    object-fit: cover;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    transition-duration: 1s;
+  }
+  h2{
+  
+    font-size:0px;
+    font-weight: 800;
+    font-family: 'Open Sans Condensed', sans-serif;
+    
+  }
+  .overViewButtons{
+    background-color: #F1D00A; /* Green */
+    border: none;
+    color: white;
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin: 4px 2px;
+    border: 2px white;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    
+  }
+  .overview {
+    background-color: white; 
+    color: black; 
+    font-size: 14px;
+    border: 2px solid #F1D00A;
+  }
+  
+  .overview:hover {
+    background-color: #21325E;
+    color: white;
+  }
+  p.overviewText{
+
+    text-align: left;
+    font-size: 13px;
+    font-weight: 900;
+    width: 100%;
+
+    }
+  
+  p{
+    text-align: center;
+    font-weight: 900;
+  }
+  h1{
+    text-align: center;
+    font-size: 32px;
+  }
+  .footerText{
+    font-size: 21px;
+    color: white;
+  }
+}
+.card{
+  position: absolute;
+  top:50%;
+  left:50%;
+  height: 400px;
+  width: 300px;
+  transform: translate(-50%,-50%);
+  transform-style: preserve-3d;
+  perspective: 600px;
+  transition: 0.5s;
+}
+.card:hover .cardFront{
+  transform: rotateX(-180deg);
+
+}
+.card:hover .cardBack {
+  transform: rotateX(0deg);
 }
